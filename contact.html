@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grostar — Contact Us</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html">Grostar</a>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html"><button class="sm-button">Login</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <span class="section-badge">Get In Touch</span>
+    <h1>Contact Us</h1>
+    <p style="max-width:540px;">Have a question, feedback, or a bulk order inquiry? We would love to hear from you. Fill out the form or use our contact details below.</p>
+
+    <!-- CONTACT LAYOUT -->
+    <div style="display:flex; flex-wrap:wrap; gap:40px; margin-top:40px; align-items:flex-start; justify-content:center;">
+
+      <!-- FORM -->
+      <div class="form-container" style="flex:1; min-width:280px; max-width:500px;">
+        <h2 style="margin-bottom:20px;">Send a Message</h2>
+
+        <div id="contactMsg" class="alert" style="display:none;"></div>
+
+        <form id="contactForm">
+          <div>
+            <label for="c-name">Your Name</label>
+            <input type="text" id="c-name" name="name" placeholder="Full name" />
+          </div>
+          <div>
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" name="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="c-subject">Subject</label>
+            <input type="text" id="c-subject" name="subject" placeholder="What is it about?" />
+          </div>
+          <div>
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="lg-button" style="width:100%; margin-top:8px;">Send Message</button>
+        </form>
+      </div>
+
+      <!-- INFO CARDS -->
+      <div style="flex:1; min-width:240px; display:flex; flex-direction:column; gap:20px;">
+
+        <div class="card">
+          <img style src="../sources/grostar.jpeg" alt="Location" style="width:48px; height:48px; object-fit:contain;" />
+          <h3>Our Address</h3>
+          <p>Gakhri, 2km GT RD, Gujrat, Punjab, Pakistan</p>
+        </div>
+
+        <div class="card">
+          <img style src="../sources/phone.jpeg" alt="Phone" style="width:48px; height:48px; object-fit:contain;" />
+          <h3>Phone</h3>
+          <p>053 7512172</p>
+          <p>+92 52 1234567 (Office)</p>
+        </div>
+
+        <div class="card">
+          <img style src="../sources/email.jpeg" alt="Email" style="width:48px; height:48px; object-fit:contain;" />
+          <h3>Email</h3>
+          <p>grostar.info@gmail.com</p>
+        </div>
+
+      </div>
+
+
+  </div><!-- /.page -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>Grostar</h1>
+        <p>Fresh groceries delivered fast and fresh every day.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h2>Account</h2>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>support@grostar.pk</p>
+        <p>+92 52 1234567</p>
+        <p>Gujrat, Pakistan</p>
+      </div>
+    </div>
+    <p style="text-align:center; border-top:1px solid var(--border-muted-color); padding-top:20px;">
+      &copy; 2025 GrowStar. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

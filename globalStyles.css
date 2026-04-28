@@ -1,0 +1,838 @@
+/* =========================================================
+   DESIGN SYSTEM — Grostar Grocery Store
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --brand-primary-color:   #2e7d32;
+  --brand-secondary-color: #1b5e20;
+  --brand-third-color:     #43a047;
+  --brand-fourth-color:    #81c784;
+  --brand-accent-color:    #f9a825;
+
+  --bg-main:  #0d1f0e;
+  --bg-card:  #132914;
+
+  --text-primary-color:     #e8f5e9;
+  --text-secondary-color:   #a5d6a7;
+  --text-muted-color:       #6a8f6b;
+  --text-focus-color:       #ffffff;
+  --text-highlighted-color: #f9a825;
+
+  --border-primary-color:     #2e7d32;
+  --border-secondary-color:   #43a047;
+  --border-muted-color:       #1b3a1c;
+  --border-focus-color:       #81c784;
+  --border-highlighted-color: #f9a825;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --transition: 0.3s ease;
+}
+
+/* =========================================================
+   DARK MODE (OPTIONAL)
+========================================================= */
+[data-theme="dark"] {
+  --bg-main: #060e06;
+  --bg-card: #0b1a0c;
+
+  --text-primary-color:     #f1f8e9;
+  --text-secondary-color:   #c8e6c9;
+  --text-muted-color:       #558b55;
+  --text-focus-color:       #ffffff;
+  --text-highlighted-color: #ffca28;
+
+  --border-primary-color:     #388e3c;
+  --border-secondary-color:   #66bb6a;
+  --border-muted-color:       #1a2e1a;
+  --border-focus-color:       #a5d6a7;
+  --border-highlighted-color: #ffca28;
+}
+
+/* =========================================================
+   GLOBAL BASE
+========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: var(--text-focus-color);
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--text-secondary-color);
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--text-secondary-color);
+  margin: 0 0 8px;
+}
+
+h4 {
+  font-size: 1.05rem;
+  color: var(--text-muted-color);
+  margin: 0 0 6px;
+}
+
+p {
+  font-size: 0.97rem;
+  color: var(--text-secondary-color);
+  margin: 0 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-fourth-color);
+  transition: color var(--transition);
+}
+
+a:hover { color: var(--brand-accent-color); }
+
+/* =========================================================
+   GLOBAL BUTTON SYSTEM
+   These properties inherit into sub-classes like link-button, nav-button etc
+========================================================= */
+button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 22px;
+  background: var(--brand-primary-color);
+  color: var(--text-focus-color);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+button:hover {
+  background: var(--brand-third-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(67, 160, 71, 0.35);
+}
+
+/* =========================================================
+   LINK BUTTON
+========================================================= */
+.link-button {
+  background: none;
+  border: 2px solid var(--brand-primary-color);
+  color: var(--brand-fourth-color);
+  padding: 9px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: inline-block;
+}
+
+.link-button:hover {
+  background: var(--brand-primary-color);
+  color: var(--text-focus-color);
+}
+
+/* =========================================================
+   Button Sizes
+   FIX: descendant selector "button .classname" as per assignment sample sheet
+========================================================= */
+button .lg-button   { padding: 14px 32px; font-size: 1.08rem; }
+button .sm-button   { padding: 7px 16px;  font-size: 0.87rem; }
+button .tiny-button { padding: 4px 10px;  font-size: 0.78rem; }
+button .border-button {
+  background: transparent;
+  border: 2px solid var(--brand-primary-color);
+  color: var(--brand-fourth-color);
+}
+button .border-button:hover {
+  background: var(--brand-primary-color);
+  color: var(--text-focus-color);
+}
+
+/* =========================================================
+   SELECT input used in forms
+========================================================= */
+select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  appearance: none;
+  transition: border var(--transition);
+}
+
+select:hover   { border-color: var(--border-secondary-color); }
+select:focus   { outline: none; border-color: var(--border-focus-color); }
+select:disabled{ opacity: 0.5; cursor: not-allowed; }
+
+.select-container { position: relative; width: 100%; }
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+nav button {
+  background: var(--brand-primary-color);
+  color: var(--text-focus-color);
+  padding: 7px 18px;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+nav button:hover {
+  background: var(--brand-third-color);
+  transform: none;
+  box-shadow: none;
+}
+
+nav a {
+  color: var(--text-secondary-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+
+nav a:hover {
+  color: var(--text-focus-color);
+  background: rgba(46,125,50,0.18);
+}
+
+/* =========================================================
+   NAVBAR (RESPONSIVE + ROLE READY)
+========================================================= */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+  background: var(--bg-card);
+  border-bottom: 2px solid var(--border-muted-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+nav > a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-third-color);
+  letter-spacing: 1px;
+}
+
+/* Menu list */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown */
+nav li { position: relative; }
+
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-sm);
+  min-width: 160px;
+  z-index: 200;
+  padding: 6px 0;
+}
+
+nav .dropdown:hover .dropdown-menu { display: block; }
+
+nav .dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 0;
+  color: var(--text-secondary-color);
+}
+
+/* =========================================================
+   HAMBURGER BUTTON in navbar
+========================================================= */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary-color);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* =========================================================
+   MOBILE NAVBAR
+========================================================= */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+
+  .menu-toggle { display: flex; }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border-muted-color);
+    padding: 12px 0;
+  }
+
+  nav ul.open { display: flex; }
+
+  nav ul li { width: 100%; }
+
+  nav ul li a {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 0;
+  }
+
+  /* Disable hover dropdown on mobile */
+  nav .dropdown:hover .dropdown-menu { display: none; }
+
+  nav .dropdown-menu {
+    position: static;
+    border: none;
+    background: rgba(0,0,0,0.2);
+    padding: 0 0 0 16px;
+  }
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+.page {
+  min-height: calc(100vh - 64px);
+  padding: 48px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CARD SYSTEM
+========================================================= */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 36px 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 260px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-secondary-color);
+  box-shadow: 0 12px 32px rgba(46,125,50,0.22);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.card a {
+  background: none;
+  color: var(--brand-fourth-color);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-top: auto;
+  padding-top: 10px;
+  transition: color var(--transition);
+}
+
+.card a:hover {
+  color: var(--brand-accent-color);
+  background: none;
+}
+
+/* =========================================================
+   FORM SYSTEM
+========================================================= */
+.form-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-md);
+  padding: 36px 40px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+form div { margin-bottom: 16px; }
+
+label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted-color);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  transition: border var(--transition), box-shadow var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--border-focus-color);
+  box-shadow: 0 0 0 3px rgba(129,199,132,0.15);
+}
+
+form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-main);
+  color: var(--text-primary-color);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border var(--transition);
+}
+
+form textarea:focus {
+  outline: none;
+  border-color: var(--border-focus-color);
+  box-shadow: 0 0 0 3px rgba(129,199,132,0.15);
+}
+
+/* =========================================================
+   TABLE SYSTEM
+========================================================= */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Base table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-size: 0.93rem;
+  background: var(--bg-card);
+}
+
+/* Header */
+table thead { background: var(--brand-secondary-color); }
+
+table th {
+  text-align: left;
+  padding: 13px 16px;
+  color: var(--text-focus-color);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Body cells */
+table td {
+  padding: 11px 16px;
+  color: var(--text-secondary-color);
+  border-bottom: 1px solid var(--border-muted-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Row styles — two consecutive rows different colors */
+table tbody tr:nth-child(odd)  { background: var(--bg-card); }
+table tbody tr:nth-child(even) { background: rgba(27,94,32,0.18); }
+
+/* Hover row color change */
+table tbody tr:hover {
+  background: rgba(46,125,50,0.28);
+  cursor: pointer;
+}
+
+/* Last row border fix */
+table tbody tr:last-child td { border-bottom: none; }
+
+/* Optional compact table */
+.table-compact th,
+.table-compact td { padding: 7px 12px; }
+
+/* Optional bordered table */
+.table-bordered th,
+.table-bordered td { border: 1px solid var(--border-muted-color); }
+
+/* Optional striped stronger */
+.table-striped tbody tr:nth-child(even) { background: rgba(67,160,71,0.1); }
+
+/* Cell content handling */
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Empty state row */
+.table-empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted-color);
+  font-style: italic;
+}
+
+.table-row-selected { background: rgba(249,168,37,0.15) !important; }
+
+/* =========================================================
+   FOOTER SYSTEM
+========================================================= */
+footer {
+  background: var(--bg-card);
+  border-top: 2px solid var(--border-muted-color);
+  padding: 48px 40px 24px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 32px;
+}
+
+.footer-container > div { flex: 1; min-width: 180px; }
+
+footer a {
+  color: var(--text-muted-color);
+  font-size: 0.92rem;
+  display: block;
+  margin-bottom: 8px;
+  transition: color var(--transition);
+}
+
+footer a:hover { color: var(--brand-fourth-color); }
+
+footer p {
+  font-size: 0.88rem;
+  color: var(--text-muted-color);
+}
+
+footer h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--brand-third-color);
+  margin-bottom: 12px;
+}
+
+footer h2 {
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-secondary-color);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 64px 0 48px;
+}
+
+.hero-text  { flex: 1; min-width: 280px; }
+.hero-image { flex: 1; min-width: 280px; text-align: center; }
+
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+/* =========================================================
+   SECTION BADGE
+========================================================= */
+.section-badge {
+  display: inline-block;
+  background: rgba(46,125,50,0.18);
+  color: var(--brand-fourth-color);
+  border: 1px solid var(--brand-primary-color);
+  border-radius: 100px;
+  padding: 4px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   STATS ROW
+========================================================= */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.stat-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-md);
+  padding: 24px 32px;
+  text-align: center;
+  flex: 1;
+  min-width: 140px;
+}
+
+.stat-item h2 { font-size: 2.2rem; color: var(--brand-accent-color); margin: 0; }
+.stat-item p  { margin: 4px 0 0; font-size: 0.88rem; }
+
+/* =========================================================
+   ALERT / NOTIFICATION BOX
+========================================================= */
+.alert {
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background: rgba(46,125,50,0.15);
+  border-color: var(--brand-primary-color);
+  color: var(--brand-fourth-color);
+}
+
+.alert-error {
+  background: rgba(183,28,28,0.15);
+  border-color: #b71c1c;
+  color: #ef9a9a;
+}
+
+/* =========================================================
+   PRICE TAG
+========================================================= */
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-accent-color);
+}
+
+.price-old {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+/* =========================================================
+   BADGE / TAG
+========================================================= */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--brand-primary-color);
+  color: var(--text-focus-color);
+}
+
+.badge-accent {
+  background: var(--brand-accent-color);
+  color: #1a1a1a;
+}
+
+/* =========================================================
+   PRODUCTS PAGE
+   Category filter button and search bar
+   FIX: moved here from internal <style> block in products.html
+========================================================= */
+.cat-btn {
+  background: transparent;
+  border: 1px solid var(--border-muted-color);
+  color: var(--text-muted-color);
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.cat-btn:hover,
+.cat-btn.active-cat {
+  background: var(--brand-primary-color);
+  border-color: var(--brand-primary-color);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--border-muted-color);
+  background: var(--bg-card);
+  color: var(--text-primary-color);
+  font-size: 0.95rem;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 28px;
+  transition: border var(--transition);
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--border-focus-color);
+}
+
+/* =========================================================
+   DASHBOARD PAGE
+   Stat grid, sidebar, layout
+   FIX: moved here from internal <style> block in dashboard.html
+========================================================= */
+.dash-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.dash-card {
+  flex: 1;
+  min-width: 160px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.dash-card:hover {
+  border-color: var(--border-secondary-color);
+  box-shadow: 0 8px 24px rgba(46,125,50,0.2);
+}
+
+.dash-card h2 { font-size: 2rem; color: var(--brand-accent-color); margin: 0 0 6px; }
+
+.dash-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted-color);
+  border-radius: var(--radius-md);
+  padding: 24px 0;
+  height: fit-content;
+}
+
+.dash-sidebar a {
+  display: block;
+  padding: 11px 24px;
+  color: var(--text-muted-color);
+  font-size: 0.93rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.dash-sidebar a:hover,
+.dash-sidebar a.active-link {
+  color: var(--brand-fourth-color);
+  background: rgba(46,125,50,0.1);
+  border-left-color: var(--brand-primary-color);
+}
+
+.dash-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.dash-main { flex: 1; min-width: 0; }
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+.reveal   { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.revealed { opacity: 1; transform: translateY(0); }
+
+/* =========================================================

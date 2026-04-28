@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grostar — Cash and Carry</title>
+  <link rel="stylesheet" href="cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav>
+    <a href="index.html">Grostar</a>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/products.html">Products</a></li>
+      <li><a href="pages/services.html">Services</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+      <li><a href="pages/login.html"><button class="sm-button">Login</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== PAGE ===================== -->
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="section-badge">Fresh &amp; Organic</span>
+        <h1>Groceries Delivered<br>To Your Door</h1>
+        <p>Shop the freshest fruits, vegetables, dairy, and pantry staples. Quality guaranteed — from farm to your table.</p>
+        <a href="pages/products.html"><button class="lg-button" style="margin-top:12px;">Shop Now</button></a>
+        <a href="pages/signup.html"><button class="border-button lg-button" style="margin-top:12px; margin-left:12px;">Get Started</button></a>
+      </div>
+      <div class="hero-image">
+        <img src="sources/basket.jpg" alt="Fresh grocery basket" />
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <h2>500+</h2>
+        <p>Happy Customers</p>
+      </div>
+      <div class="stat-item">
+        <h2>300+</h2>
+        <p>Fresh Products</p>
+      </div>
+      <div class="stat-item">
+        <h2>24/7</h2>
+        <p>Delivery Service</p>
+      </div>
+
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="reveal">
+      <span class="section-badge">Top Picks</span>
+      <h2>Featured Products</h2>
+      <div class="card-container">
+
+        <div class="card product-card" data-cat="fruits">
+          <img src="sources/apples.jpg" Fresh Apples" />
+          <h3>Fresh Apples</h3>
+          <p>Crisp and sweet — directly from the orchard.</p>
+          <span class="price">$3.99 <span class="price-old">$5.00</span></span>
+          <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Fresh Apples', 3.99, 'sources/apple.png')">Add to Cart</button>
+        </div>
+
+        <div class="card product-card" data-cat="vegetables">
+          <img src="sources/tomato.jpg" alt="Organic Tomatoes" />
+          <h3>Organic Tomatoes</h3>
+          <p>Vine-ripened, bursting with flavor.</p>
+          <span class="price">$2.49</span>
+          <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Organic Tomatoes', 2.49, 'sources/tomato.png')">Add to Cart</button>
+        </div>
+
+        <div class="card product-card" data-cat="dairy">
+          <img src="sources/milk.jpg" alt="Farm Fresh Milk" />
+          <h3>Farm Fresh Milk</h3>
+          <p>Pure and pasteurized, delivered daily.</p>
+          <span class="price">$1.99</span>
+          <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Farm Fresh Milk', 1.99, 'sources/milk.png')">Add to Cart</button>
+        </div>
+
+        <div class="card product-card" data-cat="bakery">
+          <img src="sources/bread.jpg" alt="Whole Wheat Bread" />
+          <h3>Whole Wheat Bread</h3>
+          <p>Freshly baked every morning.</p>
+          <span class="price">$2.99</span>
+          <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Whole Wheat Bread', 2.99, 'sources/bread.png')">Add to Cart</button>
+        </div>
+
+      </div>
+      <div style="text-align:center; margin-top:8px;">
+        <a href="pages/products.html"><button class="border-button">View All Products</button></a>
+      </div>
+    </section>
+
+    <!-- WHY GROSTAR -->
+    <section class="reveal" style="margin-top:56px;">
+      <span class="section-badge">Why Us</span>
+      <h2>Why Choose Grostar?</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="sources/fresh.jpg" alt="Fresh" />
+          <h3>Always Fresh</h3>
+          <p>We source directly from local farms to ensure maximum freshness in every order.</p>
+        </div>
+        <div class="card">
+          <img src="sources/delivery.jpg" alt="Fast Delivery" />
+          <h3>Fast Delivery</h3>
+          <p>Same-day delivery available. Your groceries arrive within hours of ordering.</p>
+        </div>
+        <div class="card">
+          <img src="sources/payment.jpg" alt="Secure" />
+          <h3>Secure Payments</h3>
+          <p>Multiple payment options with end-to-end encryption for your safety.</p>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>Grostar</h1>
+        <p>Fresh groceries delivered fast and fresh to your doorstep every single day.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="index.html">Home</a>
+        <a href="pages/products.html">Products</a>
+        <a href="pages/services.html">Services</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+      <div>
+        <h2>Account</h2>
+        <a href="pages/login.html">Login</a>
+        <a href="pages/signup.html">Sign Up</a>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>support@grostar.pk</p>
+        <p>+92 52 1234567</p>
+        <p>Gujrat, Pakistan</p>
+      </div>
+    </div>
+    <p style="text-align:center; border-top:1px solid var(--border-muted-color); padding-top:20px;">
+      &copy; 2025 Grostar. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="jsFile/jsFunctions.js"></script>
+</body>
+</html>

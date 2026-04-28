@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grostar — Products</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html">Grostar</a>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html"><button class="sm-button">Login</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <span class="section-badge">Our Store</span>
+    <h1>All Products</h1>
+    <p>Browse our wide selection of fresh, organic groceries sourced directly from trusted farms.</p>
+
+    <!-- SEARCH -->
+    <input type="text" id="productSearch" class="search-bar" placeholder="Search products..." />
+
+    <!-- CATEGORY FILTER -->
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;">
+      <button class="cat-btn active-cat" data-cat="all">All</button>
+      <button class="cat-btn" data-cat="fruits">Fruits</button>
+      <button class="cat-btn" data-cat="vegetables">Vegetables</button>
+      <button class="cat-btn" data-cat="dairy">Dairy</button>
+      <button class="cat-btn" data-cat="bakery">Bakery</button>
+      <button class="cat-btn" data-cat="pantry">Pantry</button>
+    </div>
+
+    <!-- PRODUCT CARDS -->
+    <div class="card-container">
+
+      <div class="card product-card" data-cat="fruits">
+        <img src="../sources/apples.jpg" alt="Fresh Apples" />
+        <span class="badge badge-accent" style="margin-bottom:8px;">Sale</span>
+        <h3>Fresh Apples</h3>
+        <p>Crisp and sweet from local orchards.</p>
+        <span class="price">$3.99 <span class="price-old">$5.00</span></span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Fresh Apples',3.99,'../sources/apple.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="vegetables">
+        <img src="../sources/tomato.jpg" alt="Tomatoes" />
+        <h3>Organic Tomatoes</h3>
+        <p>Vine-ripened and full of flavor.</p>
+        <span class="price">$2.49</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Organic Tomatoes',2.49,'../sources/tomato.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="dairy">
+        <img src="../sources/milk.jpg" alt="Milk" />
+        <h3>Farm Fresh Milk</h3>
+        <p>Pure and pasteurized, delivered daily.</p>
+        <span class="price">$1.99</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Farm Fresh Milk',1.99,'../sources/milk.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="bakery">
+        <img src="../sources/bread.jpg" alt="Bread" />
+        <h3>Whole Wheat Bread</h3>
+        <p>Freshly baked every morning.</p>
+        <span class="price">$2.99</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Whole Wheat Bread',2.99,'../sources/bread.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="fruits">
+        <img src="../sources/banana.jpg" alt="Bananas" />
+        <h3>Bananas</h3>
+        <p>Ripe and energy-packed bundles.</p>
+        <span class="price">$1.49</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Bananas',1.49,'../sources/banana.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="vegetables">
+        <img src="../sources/spinach.jpg" alt="Spinach" />
+        <h3>Baby Spinach</h3>
+        <p>Tender leaves, washed and ready.</p>
+        <span class="price">$2.19</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Baby Spinach',2.19,'../sources/spinach.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="dairy">
+        <img src="../sources/eggs.jpg" alt="Eggs" />
+        <h3>Free Range Eggs</h3>
+        <p>12-pack from free-range hens.</p>
+        <span class="price">$4.50</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Free Range Eggs',4.50,'../sources/eggs.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="pantry">
+        <img src="../sources/oil.jpg" alt="Olive Oil" />
+        <h3>Extra Virgin Olive Oil</h3>
+        <p>Cold-pressed, 500ml bottle.</p>
+        <span class="price">$8.99</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Olive Oil',8.99,'../sources/olive-oil.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="pantry">
+        <img src="../sources/mustard.jpg" alt="Basmati Rice" />
+        <h3>Mustard Oil</h3>
+        <p>Freshly obtained organic oil.</p>
+        <span class="price">$5.49</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Basmati Rice',5.49,'../sources/rice.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="fruits">
+        <img src="../sources/mango.jpg" alt="Mangoes" />
+        <span class="badge" style="margin-bottom:8px;">Season</span>
+        <h3>Alphonso Mangoes</h3>
+        <p>Sweet seasonal mangoes, per dozen.</p>
+        <span class="price">$6.99</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Alphonso Mangoes',6.99,'../sources/mango.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="vegetables">
+        <img src="../sources/carrot.jpg" alt="Carrots" />
+        <h3>Fresh Carrots</h3>
+        <p>Crunchy, sweet, and locally grown.</p>
+        <span class="price">$1.79</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Fresh Carrots',1.79,'../sources/carrot.png')">Add to Cart</button>
+      </div>
+
+      <div class="card product-card" data-cat="dairy">
+        <img src="../sources/yogurt.jpg" alt="Yogurt" />
+        <h3>Natural Yogurt</h3>
+        <p>Probiotic-rich, 500g tub.</p>
+        <span class="price">$3.25</span>
+        <button class="sm-button" style="margin-top:12px;" onclick="addToCart('Natural Yogurt',3.25,'../sources/yogurt.png')">Add to Cart</button>
+      </div>
+
+    </div>
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>GrowStar</h1>
+        <p>Fresh groceries delivered fast and fresh every day.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h2>Account</h2>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p>support@grostar.pk</p>
+        <p>+92 52 1234567</p>
+        <p>Gujrat, Pakistan</p>
+      </div>
+    </div>
+    <p style="text-align:center; border-top:1px solid var(--border-muted-color); padding-top:20px;">
+      &copy; 2025 Grostar. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

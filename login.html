@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grostar — Login</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html">Grostar</a>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signup.html"><button class="sm-button border-button">Sign Up</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+    <div style="display:flex; justify-content:center; align-items:center; min-height:72vh;">
+      <div class="form-container">
+        <span class="section-badge">Welcome Back</span>
+        <h2 style="margin-bottom:24px;">Login to Grostar</h2>
+
+        <div id="loginMsg" class="alert" style="display:none;"></div>
+
+        <form id="loginForm">
+          <div>
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="login-pass">Password</label>
+            <input type="password" id="login-pass" name="password" placeholder="Enter password" />
+          </div>
+          <div style="margin-top:20px;">
+            <button type="submit" class="lg-button" style="width:100%;">Login</button>
+          </div>
+        </form>
+
+        <p style="text-align:center; margin-top:20px; font-size:0.9rem;">
+          Don't have an account? <a href="signup.html">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>Grostar</h1>
+        <p>Fresh groceries delivered fast.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p style="text-align:center; border-top:1px solid var(--border-muted-color); padding-top:20px;">
+      &copy; 2025 Grostar. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

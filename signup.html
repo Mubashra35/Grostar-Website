@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grostar — Sign Up</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="../index.html">Grostar</a>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html"><button class="sm-button">Login</button></a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+    <div style="display:flex; justify-content:center; align-items:center; min-height:72vh;">
+      <div class="form-container">
+        <span class="section-badge">Join Grostar</span>
+        <h2 style="margin-bottom:24px;">Create Your Account</h2>
+
+        <div id="signupMsg" class="alert" style="display:none;"></div>
+
+        <form id="signupForm">
+          <div>
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="fullname" placeholder="Your full name" />
+          </div>
+          <div>
+            <label for="signup-email">Email Address</label>
+            <input type="email" id="signup-email" name="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="signup-phone">Phone Number</label>
+            <input type="tel" id="signup-phone" name="phone" placeholder="+92 300 0000000" />
+          </div>
+          <div>
+            <label for="signup-pass">Password</label>
+            <input type="password" id="signup-pass" name="password" placeholder="Min. 6 characters" />
+          </div>
+          <div>
+            <label for="signup-confirm">Confirm Password</label>
+            <input type="password" id="signup-confirm" name="confirm" placeholder="Repeat password" />
+          </div>
+          <div style="margin-top:20px;">
+            <button type="submit" class="lg-button" style="width:100%;">Create Account</button>
+          </div>
+        </form>
+
+        <p style="text-align:center; margin-top:20px; font-size:0.9rem;">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h1>Grostar</h1>
+        <p>Fresh groceries delivered fast.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p style="text-align:center; border-top:1px solid var(--border-muted-color); padding-top:20px;">
+      &copy; 2025 Grostar. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>
